@@ -8,7 +8,9 @@ class Main {
         try{
             FluigUtils.initLoading("Processando", "Buscando...", async () => {
                 const processList = await this.dataHandler.listProcess();
-                
+                console.log('CHECKLIST FLUIGUTILS');
+                console.log(processList);
+                console.log("==================")
     
                 if (processList.error && !processList.message) {
     

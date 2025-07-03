@@ -13,7 +13,7 @@ class GetHandler {
     async listProcess(){
         try{
             let params = [];
-
+            console.log('chamada PARAMS...')
             if ( $('#filialInput').val() && $('#filialInput').val() != undefined && $('#filialInput').val() != 'all' ) {
                 params.push(
                     'codFilial',
@@ -26,6 +26,7 @@ class GetHandler {
                 url: `/api/public/ecm/dataset/search?datasetId=dsGetCliente&filterFields=${params}&`,
                 method: "get"
             });
+            console.log('DATA API: ' + data);
 
             if (data.status == 200 && data.response.content) {
                 if (data.response.content.length > 0) {

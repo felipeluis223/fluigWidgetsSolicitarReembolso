@@ -2,16 +2,31 @@ var Search = SuperWidget.extend({
     myTable: null,
 
     init: function () {
+        var that = this; // pega o contexto correto da widget
         // Aqui você pode inicializar a tabela vazia
         // this.loadTable([]);
+        console.log('main')
         const main = new Main();
+        
+        console.log('main1')
         new EventHandler(main)
+        console.log('main2')
+        
+        $(document).ready(function () {
+            // Adiciona um ouvinte de evento de clique ao botão de consulta de relatório
+            $("#btnBuscarDados").click(function () {
+                // Exibe o loading antes da busca
+                //$("#loading-container").show();
+                // Chama a função consultRelatorioSc quando o botão é clicado
+                that.loadTable();
+            });
+        });
     },
 
     bindings: {
-        local: {
-            'btnLoad': ['click_loadTable']
-        }
+        // local: {
+        //     'btnLoad': ['click_loadTable']
+        // }
     },
 
     loadTable: function () {

@@ -42,6 +42,8 @@ class FluigUtils {
     }    
 
       static initLoading(title, message, fn, miau) {
+        console.log("MIAU: " + miau);
+        console.log("=========================================");
 
         //MIAU = Método Interno para Ajuste Unificado
         if (miau) {
@@ -76,17 +78,3 @@ class FluigUtils {
 
 }
 
-class EventHandler {
-    
-
-    constructor(main) {
-        this.main = main;
-        this.handleClickItens();
-    }
-
-    handleClickItens() {
-        console.log('chamada');
-        $("#btnBuscarDados").click(() => this.main.startEngines());
-    }
-    
-}
