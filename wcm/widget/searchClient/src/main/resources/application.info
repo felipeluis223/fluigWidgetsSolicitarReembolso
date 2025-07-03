@@ -16,4 +16,7 @@ edit.file=edit.ftl
 locale.file.base.name=searchClient
 application.resource.js.1=/resources/js/searchClient.js
 application.resource.css.2=/resources/css/searchClient.css
+application.resource.js.3=/resources/js/GetHandler.js
+application.resource.js.4=/resources/js/FluigUtils.js
+application.resource.js.5=/resources/js/Main.js
 hash=4a16315e9e66fa7d797b3f6b1fb365b69f9a4ce2

@@ -4,6 +4,8 @@ var Search = SuperWidget.extend({
     init: function () {
         // Aqui você pode inicializar a tabela vazia
         // this.loadTable([]);
+        const main = new Main();
+        new EventHandler(main)
     },
 
     bindings: {
