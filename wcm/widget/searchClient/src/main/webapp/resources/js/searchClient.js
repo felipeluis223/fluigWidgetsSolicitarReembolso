@@ -1,22 +1,42 @@
-var MyWidget = SuperWidget.extend({
-    //variáveis da widget
-    variavelNumerica: null,
-    variavelCaracter: null,
+var Search = SuperWidget.extend({
+    myTable: null,
 
-    //método iniciado quando a widget é carregada
-    init: function() {
+    init: function () {
+        // Aqui você pode inicializar a tabela vazia
+        this.loadTable([]);
     },
-  
-    //BIND de eventos
+
     bindings: {
         local: {
-            'execute': ['click_executeAction']
-        },
-        global: {}
+            'btnLoad': ['click_loadTable']
+        }
     },
- 
-    executeAction: function(htmlElement, event) {
+
+    loadTable: function () {
+        var data = [
+            { id: '001', name: 'São Paulo', uf: 'SP' },
+            { id: '002', name: 'Campinas', uf: 'SP' },
+            { id: '003', name: 'Santos', uf: 'SP' }
+        ];
+        // Destroi e recria a tabela
+        if (this.myTable !== null) {
+            this.myTable.destroy();
+        }
+
+        this.myTable = FLUIGC.datatable('#target', {
+            dataRequest: data,
+            renderContent: ['id', 'name', 'uf'],
+            header: [
+                { title: 'Código' },
+                { title: 'Nome' },
+                { title: 'UF' }
+            ]
+        }, function (err, data) {
+            if (err) {
+                FLUIGC.toast({ title: 'Erro', message: err, type: 'danger' });
+            } else {
+                console.log('Tabela carregada!');
+            }
+        });
     }
-
 });
-

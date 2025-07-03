@@ -1,6 +1,4 @@
-<#assign parametros = "{'prop1': '${orderedData!''}'}">
-
-<div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance(${parametros?json_string})">
+<div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance()">
 
     <section class="panel panel-default fs-display-flex fs-flex-direction-column fs-flex-wrap-wrap col-md-12">
         
@@ -84,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 ">
                 <div class="form-group">
                     <label for="inscrInput">Inscrição Estadual:</label>
                     <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
@@ -93,11 +91,13 @@
 
             <div class="col-md-2 fs-md-gap fs-display-flex fs-align-items-center">
                 <button type="button" class="btn btn-default">Limpar</button>
-                <button type="button" class="btn btn-info">Filtrar</button>
+                <button type="button" class="btn btn-info" data-btnLoad>Filtrar</button>
             </div>
         </div>
+
+        <section class="panel-body col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-column fs-md-margin-vertical">
+            <div id="target"></div>
+        </section>
         
     </section>
-
-    ${orderedData!''}
 </div>
