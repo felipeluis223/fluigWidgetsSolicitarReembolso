@@ -8,78 +8,78 @@
             <h3>Consulta de Clientes Cadastrados</h3>
         </div>
 
-        <div class="col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row">
-            <div class="col-md-4 fs-md-gap-vertical">
+        <div class="col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row fs-md-margin-vertical">
+            <div class="col-md-3 fs-md-gap-vertical">
                 <div class="form-group">
                     <label for="filialInput">Filial:</label>
                     <input type="text" class="form-control" id="filialInput" placeholder="Ex.: 00000">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="codigoInput">Código:</label>
                     <input type="text" class="form-control" id="codigoInput" placeholder="Ex.: 0000000">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-1">
                 <div class="form-group">
                     <label for="lojaInput">Loja:</label>
                     <input type="text" class="form-control" id="lojaInput" placeholder="Ex.: 00">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="nomeInput">Nome:</label>
                     <input type="text" class="form-control" id="nomeInput" placeholder="Ex.: João Silva">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="nreduzInput">Nome Reduzido:</label>
                     <input type="text" class="form-control" id="nreduzInput" placeholder="Ex.: J. Silva">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="enderecoInput">Endereço:</label>
                     <input type="text" class="form-control" id="enderecoInput" placeholder="Ex.: Rua Exemplo, 123">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="bairroInput">Bairro:</label>
                     <input type="text" class="form-control" id="bairroInput" placeholder="Ex.: Centro">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="municipioInput">Município:</label>
                     <input type="text" class="form-control" id="municipioInput" placeholder="Ex.: São Paulo">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="emailInput">E-mail:</label>
                     <input type="email" class="form-control" id="emailInput" placeholder="Ex.: cliente@email.com">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="cnpjInput">CNPJ/CPF:</label>
                     <input type="text" class="form-control" id="cnpjInput" placeholder="Ex.: 00.000.000/0000-00">
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="inscrInput">Inscrição Estadual:</label>
                     <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
