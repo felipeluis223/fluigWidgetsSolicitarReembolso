@@ -91,7 +91,7 @@
 
             <div class="col-md-2 fs-md-gap fs-display-flex fs-align-items-center">
                 <button type="button" class="btn btn-default">Limpar</button>
-                <button type="button" class="btn btn-info" data-bind="btnLoad">Filtrar</button>
+                <button type="button" class="btn btn-info" data-btnLoad>Filtrar</button>
             </div>
         </div>
 

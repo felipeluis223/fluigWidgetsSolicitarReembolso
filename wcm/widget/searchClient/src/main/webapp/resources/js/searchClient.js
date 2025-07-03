@@ -1,60 +1,61 @@
 var Search = SuperWidget.extend({
     myTable: null,
-    dataFromServer: [],
 
-    load: function(widgetInstance) {
-        // Aqui roda no servidor - pode usar DatasetFactory
-        var filial = null;
-        // Se quiser pegar filtro do widgetInstance ou params, use aqui
-
-        var constraints = [];
-        if (filial) {
-            constraints.push(DatasetFactory.createConstraint("A1_FILIAL", filial, filial, ConstraintType.MUST));
-        }
-
-        var dataset = DatasetFactory.getDataset("dsGetCliente", null, constraints, null);
-        var data = [];
-
-        if (dataset && dataset.values.length > 0) {
-            for (var i = 0; i < dataset.values.length; i++) {
-                var row = dataset.values[i];
-                data.push({
-                    filial: row["A1_FILIAL"],
-                    codigo: row["A1_COD"],
-                    loja: row["A1_LOJA"],
-                    nome: row["A1_NOME"],
-                    nreduz: row["A1_NREDUZ"],
-                    endereco: row["A1_END"],
-                    bairro: row["A1_BAIRRO"],
-                    municipio: row["A1_MUN"],
-                    email: row["A1_EMAIL"],
-                    cnpj: row["A1_CGC"],
-                    inscricao: row["A1_INSCR"]
-                });
-            }
-        }
-        console.log("DATASET: ");
-        console.log(dataset);
-        this.dataFromServer = data; // guarda os dados para usar no init
-    },
-
-    init: function() {
-        // Roda no cliente após carregar
-        this.renderTable(this.dataFromServer);
+    init: function () {
+        // Aqui você pode inicializar a tabela vazia
+        // this.loadTable([]);
     },
 
     bindings: {
         local: {
-            'btnLoad': ['click_loadTable'] // botão no html com data-bind="btnLoad"
+            'btnLoad': ['click_loadTable']
         }
     },
 
-    loadTable_click: function() {
-        // Se quiser recarregar a tabela com filtro novo, pode fazer AJAX ou reload da página
-        this.renderTable(this.dataFromServer);
-    },
+    loadTable: function () {
+       var data = [
+            {
+                filial: "0001",
+                codigo: "0012345",
+                loja: "01",
+                nome: "João da Silva",
+                nreduz: "J. Silva",
+                endereco: "Rua das Flores, 100",
+                bairro: "Centro",
+                municipio: "São Paulo",
+                email: "joao@exemplo.com",
+                cnpj: "12.345.678/0001-90",
+                inscricao: "123456789"
+            },
+            {
+                filial: "0002",
+                codigo: "0098765",
+                loja: "02",
+                nome: "Maria Oliveira",
+                nreduz: "M. Oliveira",
+                endereco: "Av. Paulista, 1500",
+                bairro: "Bela Vista",
+                municipio: "Campinas",
+                email: "maria@empresa.com",
+                cnpj: "98.765.432/0001-10",
+                inscricao: "987654321"
+            },
+            {
+                filial: "0003",
+                codigo: "0043210",
+                loja: "03",
+                nome: "Carlos Lima",
+                nreduz: "C. Lima",
+                endereco: "Rua A, 45",
+                bairro: "Boa Vista",
+                municipio: "Santos",
+                email: "carlos@email.com",
+                cnpj: "11.111.111/1111-11",
+                inscricao: "1122334455"
+            }
+        ];
 
-    renderTable: function(data) {
+        // Destroi e recria a tabela
         if (this.myTable !== null) {
             this.myTable.destroy();
         }
@@ -62,40 +63,41 @@ var Search = SuperWidget.extend({
         this.myTable = FLUIGC.datatable('#target', {
             dataRequest: data,
             renderContent: [
-                'filial',
-                'codigo',
-                'loja',
-                'nome',
-                'nreduz',
-                'endereco',
-                'bairro',
-                'municipio',
-                'email',
-                'cnpj',
+                'filial', 
+                'codigo', 
+                'loja', 
+                'nome', 
+                'nreduz', 
+                'endereco', 
+                'bairro', 
+                'municipio', 
+                'email', 
+                'cnpj', 
                 'inscricao'
             ],
             header: [
-                { title: 'Filial' },
-                { title: 'Código' },
-                { title: 'Loja' },
-                { title: 'Nome' },
-                { title: 'Nome Reduzido' },
-                { title: 'Endereço' },
-                { title: 'Bairro' },
-                { title: 'Município' },
-                { title: 'E-mail' },
-                { title: 'CNPJ/CPF' },
-                { title: 'Inscrição Estadual' }
+                { title: 'Filial' },              // A1_FILIAL
+                { title: 'Código' },              // A1_COD
+                { title: 'Loja' },                // A1_LOJA
+                { title: 'Nome' },                // A1_NOME
+                { title: 'Nome Reduzido' },       // A1_NREDUZ
+                { title: 'Endereço' },            // A1_END
+                { title: 'Bairro' },              // A1_BAIRRO
+                { title: 'Município' },           // A1_MUN
+                { title: 'E-mail' },              // A1_EMAIL
+                { title: 'CNPJ/CPF' },            // A1_CGC
+                { title: 'Inscrição Estadual' }   // A1_INSCR
             ],
-            search: { enabled: false },
-            pagination: { enabled: false }
-        }, function(err) {
+            search: {
+                enabled: false
+            },
+            
+
+        }, function (err, data) {
             if (err) {
                 FLUIGC.toast({ title: 'Erro', message: err, type: 'danger' });
             } else {
-                console.log("DATA: ");
-                console.log(data);
-                console.log('Tabela carregada com Dataset!');
+                console.log('Tabela carregada!');
             }
         });
     }
