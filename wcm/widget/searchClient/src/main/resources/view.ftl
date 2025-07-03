@@ -4,12 +4,13 @@
 
     <section class="panel panel-default fs-display-flex fs-flex-direction-column fs-flex-wrap-wrap col-md-12">
         
-        <div class="col-md-12">
-            <h3>Consulta de Clientes Cadastrados</h3>
+        <div class="col-md-12 panel-heading">
+            <h3 class="panel-title">Consulta de Clientes Cadastrados</h3>
         </div>
 
-        <div class="col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row fs-md-margin-vertical">
-            <div class="col-md-3 fs-md-gap-vertical">
+        <div class="panel-body col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row fs-md-margin-vertical">
+            <!-- 1° Linha -->
+            <div class="col-md-2 fs-md-gap-vertical">
                 <div class="form-group">
                     <label for="filialInput">Filial:</label>
                     <input type="text" class="form-control" id="filialInput" placeholder="Ex.: 00000">
@@ -23,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label for="lojaInput">Loja:</label>
                     <input type="text" class="form-control" id="lojaInput" placeholder="Ex.: 00">
@@ -43,6 +44,8 @@
                     <input type="text" class="form-control" id="nreduzInput" placeholder="Ex.: J. Silva">
                 </div>
             </div>
+
+            <!-- 2° Linha -->
 
             <div class="col-md-3">
                 <div class="form-group">
@@ -72,6 +75,8 @@
                 </div>
             </div>
 
+            <!-- 3° Linha -->
+
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="cnpjInput">CNPJ/CPF:</label>
@@ -84,6 +89,11 @@
                     <label for="inscrInput">Inscrição Estadual:</label>
                     <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
                 </div>
+            </div>
+
+            <div class="col-md-2 fs-md-gap fs-display-flex fs-align-items-center">
+                <button type="button" class="btn btn-default">Limpar</button>
+                <button type="button" class="btn btn-info">Filtrar</button>
             </div>
         </div>
         
