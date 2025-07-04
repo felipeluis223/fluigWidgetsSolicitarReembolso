@@ -72,29 +72,35 @@ var Search = SuperWidget.extend({
             return;
         }
 
-        var table = '<table class="table table-striped">';
-        table += '<thead><tr>';
+        // Monta tabela compacta sem scroll
+        var table = '<table class="table table-sm table-striped table-bordered" ' +
+                    'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%;">';
 
         // Cabeçalho
+        table += '<thead><tr>';
         var keys = Object.keys(data[0]);
         for (var i = 0; i < keys.length; i++) {
-            table += '<th>' + keys[i] + '</th>';
+            table += '<th style="padding: 2px 4px; border: 1px solid #ddd;">' + keys[i] + '</th>';
         }
         table += '</tr></thead>';
 
-        // Corpo da tabela
+        // Corpo
         table += '<tbody>';
         for (var j = 0; j < data.length; j++) {
             table += '<tr>';
             for (var k = 0; k < keys.length; k++) {
-                table += '<td>' + data[j][keys[k]] + '</td>';
+                table += '<td style="padding: 2px 4px; border: 1px solid #ddd;" class="fs-text-xs">' + data[j][keys[k]] + '</td>';
             }
             table += '</tr>';
         }
         table += '</tbody></table>';
 
-        $("#target").html(table); // Alvo correto
+        // Aplica no div alvo
+        $("#target").html(table);
     }
+
+
+
 
 
 });
