@@ -18,17 +18,6 @@ var Search = SuperWidget.extend({
         });
     },
 
-    bindings: {
-        local: {
-            'execute': ['click_executeAction']
-        },
-        global: {}
-    },
-
-    executeAction: function (htmlElement, event) {
-        // Evento customizado
-    },
-
     executeReport: function () {
         var that = this;
 
