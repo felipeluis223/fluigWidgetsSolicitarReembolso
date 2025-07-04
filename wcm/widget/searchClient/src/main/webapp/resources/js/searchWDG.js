@@ -11,6 +11,10 @@ var Search = SuperWidget.extend({
             $("#btnBuscarDados").click(function () {
                 that.executeReport();
             });
+
+            $("#btnPrint").click(function() {
+                printTable();
+            });
         });
     },
 

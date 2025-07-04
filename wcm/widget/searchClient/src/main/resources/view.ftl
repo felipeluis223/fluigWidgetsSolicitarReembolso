@@ -91,7 +91,7 @@
 
             <div class="col-md-2 fs-md-gap fs-display-flex fs-align-items-center">
                 <button type="button" class="btn btn-default">Limpar</button>
-                <button type="button" class="btn btn-primary" onclick="printTableOnly()">Imprimir</button>
+                <button type="button" class="btn btn-primary" name="btnPrint" id="btnPrint">Imprimir</button>
                 <button type="button" id="btnBuscarDados" name="btnBuscarDados" class="btn btn-info" data-btnLoad>Filtrar</button>
             </div>
         </div>
@@ -99,19 +99,6 @@
         <section class="panel-body col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-column fs-md-margin-vertical">
             <div id="target"></div>
         </section>
-        <script>
-            function printTableOnly() {
-                var tableHtml = document.getElementById('target').innerHTML;
-                var printWindow = window.open('', '', 'height=700,width=900');
-                printWindow.document.write('<html><head><title>Imprimir</title>');
-                printWindow.document.write('<style>table { font-size: 8px; width: 100%; table-layout: fixed; } th, td { padding: 2px; }</style>');
-                printWindow.document.write('</head><body>');
-                printWindow.document.write(tableHtml);
-                printWindow.document.write('</body></html>');
-                printWindow.document.close();
-                printWindow.print();
-            }
-
-        </script>
+       
     </section>
 </div>
