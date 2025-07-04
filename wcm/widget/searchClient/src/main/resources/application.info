@@ -19,4 +19,5 @@ application.resource.js.1=/resources/js/fluigUtils.js
 application.resource.js.2=/resources/js/dataHandler.js
 application.resource.js.3=/resources/js/main.js
 application.resource.js.4=/resources/js/searchWDG.js
+application.resource.js.5=/resources/js/renderTable.js
 hash=4a16315e9e66fa7d797b3f6b1fb365b69f9a4ce2
