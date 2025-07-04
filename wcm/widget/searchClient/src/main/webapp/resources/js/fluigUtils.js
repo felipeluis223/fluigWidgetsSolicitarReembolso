@@ -1,7 +1,6 @@
 // ========== FLUIG UTILS ==========
 var FluigUtils = {
     restCall: function (obj, callback) {
-        console.log("===========FLUIG UTILS - RESTCALL===========");
         var parms;
 
         if (obj.special) {
@@ -25,8 +24,7 @@ var FluigUtils = {
             };
         }
 
-        console.log("Objeto: ", obj);
-        console.log("========================");
+        // console.log("Objeto: ", obj);
 
         fetch(obj.url, parms)
             .then(function (response) {

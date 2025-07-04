@@ -4,11 +4,7 @@ var Search = SuperWidget.extend({
     main: null,
 
     init: function () {
-        console.log("===========WDG_SYNCROS - INIT===========");
         this.main = new Main();
-        console.log(this.main);
-        console.log("FIM DO PROCESSO");
-
         var that = this;
 
         $(document).ready(function () {
@@ -30,8 +26,6 @@ var Search = SuperWidget.extend({
     },
 
     executeReport: function () {
-        console.log("===========WDG_SYNCROS - EXECUTEREPORT===========");
-
         var that = this;
 
         FluigUtils.restCall({
@@ -59,6 +53,7 @@ var Search = SuperWidget.extend({
                 var limitedData = mydata.slice(0, 10);
 
                 console.log('WDG_SYNCROS - Dados limitados:', limitedData);
+
             } else {
                 console.error('Erro ao buscar dataset:', result.statusText);
             }
