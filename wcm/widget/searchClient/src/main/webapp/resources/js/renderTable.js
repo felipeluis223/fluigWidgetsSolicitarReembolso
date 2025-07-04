@@ -10,8 +10,7 @@ function renderTable(data) {
     });
 
     var table = '<table class="table table-sm table-striped table-bordered" ' +
-            'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%; table-layout: fixed;">';
-
+                'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%; table-layout: fixed;">';
 
     table += '<thead><tr>';
     for (var i = 0; i < keys.length; i++) {
@@ -27,7 +26,7 @@ function renderTable(data) {
         else if (keys[i] == "A1_INSCR") columnTitle = "Insc.Estadual";
         else if (keys[i] == "A1_MUN") columnTitle = "Município";
 
-        table += '<th style="padding: 2px 4px; border: 1px solid #ddd; cursor: pointer;" class="fs-text-xs" data-col="' + i + '" data-order="desc">' + columnTitle + '</th>';
+        table += '<th style="padding: 2px 4px; border: 1px solid #ddd; cursor: pointer; word-wrap: break-word; white-space: normal;" class="fs-text-xs" data-col="' + i + '" data-order="desc">' + columnTitle + '</th>';
     }
     table += '</tr></thead>';
 
@@ -35,7 +34,7 @@ function renderTable(data) {
     for (var j = 0; j < data.length; j++) {
         table += '<tr>';
         for (var k = 0; k < keys.length; k++) {
-            table += '<td style="padding: 2px 4px; border: 1px solid #ddd;" class="fs-text-xs">' + (data[j][keys[k]] || '') + '</td>';
+            table += '<td style="padding: 2px 4px; border: 1px solid #ddd; word-wrap: break-word; white-space: normal;" class="fs-text-xs">' + (data[j][keys[k]] || '') + '</td>';
         }
         table += '</tr>';
     }
