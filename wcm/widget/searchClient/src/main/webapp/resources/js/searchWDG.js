@@ -65,26 +65,22 @@ var Search = SuperWidget.extend({
 
     // Função que gera HTML da tabela
     renderTable: function (data) {
-        console.log("Chamou renderTable:", data); // Debug
-
         if (!data || data.length === 0) {
             $("#target").html("<p>Nenhum dado encontrado.</p>");
             return;
         }
 
-        // Monta tabela compacta sem scroll
+        var keys = Object.keys(data[0]);
+
         var table = '<table class="table table-sm table-striped table-bordered" ' +
                     'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%;">';
 
-        // Cabeçalho
         table += '<thead><tr>';
-        var keys = Object.keys(data[0]);
         for (var i = 0; i < keys.length; i++) {
-            table += '<th style="padding: 2px 4px; border: 1px solid #ddd;">' + keys[i] + '</th>';
+            table += '<th style="padding: 2px 4px; border: 1px solid #ddd; cursor: pointer;" class="fs-text-xs" data-col="' + i + '" data-order="desc">' + keys[i] + '</th>';
         }
         table += '</tr></thead>';
 
-        // Corpo
         table += '<tbody>';
         for (var j = 0; j < data.length; j++) {
             table += '<tr>';
@@ -95,9 +91,53 @@ var Search = SuperWidget.extend({
         }
         table += '</tbody></table>';
 
-        // Aplica no div alvo
         $("#target").html(table);
+
+        // Evento para ordenar colunas ao clicar no cabeçalho
+        $("#target th").on('click', function () {
+            var tableEl = $(this).closest('table');
+            var tbody = tableEl.find('tbody');
+            var rows = tbody.find('tr').toArray();
+            var colIndex = $(this).data('col');
+            var order = $(this).data('order');
+            var text;
+
+            // Alterna ordem
+            order = (order === 'desc') ? 'asc' : 'desc';
+            $(this).data('order', order);
+
+            // Atualiza indicador (seta)
+            $("#target th").each(function() {
+                $(this).html($(this).text().replace(' ▲','').replace(' ▼',''));
+                $(this).data('order', 'desc');
+            });
+            $(this).html($(this).text() + (order === 'asc' ? ' ▲' : ' ▼'));
+            $(this).data('order', order);
+
+            rows.sort(function (a, b) {
+                var A = $(a).find('td').eq(colIndex).text().toUpperCase();
+                var B = $(b).find('td').eq(colIndex).text().toUpperCase();
+
+                // Se for número, converte para float para comparar numericamente
+                var numA = parseFloat(A.replace(/[^0-9.\-]+/g,""));
+                var numB = parseFloat(B.replace(/[^0-9.\-]+/g,""));
+
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    A = numA;
+                    B = numB;
+                }
+
+                if (A < B) return order === 'asc' ? -1 : 1;
+                if (A > B) return order === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            $.each(rows, function(index, row) {
+                tbody.append(row);
+            });
+        });
     }
+
 
 
 
