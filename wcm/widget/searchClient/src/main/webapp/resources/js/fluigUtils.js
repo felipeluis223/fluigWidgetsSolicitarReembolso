@@ -40,23 +40,4 @@ var FluigUtils = {
                 callback(err);
             });
     },
-
-    renderTable: function(selector, config) {
-        FLUIGC.datatable(selector, {
-            dataRequest: config.rows,
-            columns: config.columns.map(function(col) {
-                return {
-                    data: col,
-                    title: col
-                };
-            }),
-            scroll: {
-                target: selector,
-                enabled: true
-            },
-            search: {
-                enabled: true
-            }
-        });
-    }
 };
