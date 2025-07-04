@@ -50,7 +50,8 @@ var Search = SuperWidget.extend({
                 }
 
                 // Limita a 10 registros
-                var limitedData = mydata.slice(0, 10);
+                // var limitedData = mydata.slice(0, 10);
+                var limitedData = mydata;
 
                 console.log('WDG_SYNCROS - Dados limitados:', limitedData);
 

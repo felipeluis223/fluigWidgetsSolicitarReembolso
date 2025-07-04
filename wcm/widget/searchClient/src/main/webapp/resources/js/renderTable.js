@@ -10,7 +10,8 @@ function renderTable(data) {
     });
 
     var table = '<table class="table table-sm table-striped table-bordered" ' +
-                'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%;">';
+            'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%; table-layout: fixed;">';
+
 
     table += '<thead><tr>';
     for (var i = 0; i < keys.length; i++) {

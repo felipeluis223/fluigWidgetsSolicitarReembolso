@@ -2,3 +2,41 @@
 .backgroundGreen {
     background-color: #35825e;
 }
+
+/* Trabalhando com a função Impressão do Browser */
+@media print {
+  table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    font-size: 7px !important;
+    word-break: break-word !important;
+  }
+
+  th, td {
+    padding: 2px 3px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Oculta botões e filtros durante a impressão */
+  #btnBuscarDados,
+  .form-group,
+  .panel-heading,
+  .panel-title,
+  .pagination-controls,
+  button {
+    display: none !important;
+  }
+
+  /* Deixa só a tabela visível */
+  #target {
+    margin: 0;
+    padding: 0;
+  }
+}
