@@ -1,5 +1,13 @@
 function printTable() {
     var tableHtml = document.getElementById('target').innerHTML;
+
+    // Conteúdo do cabeçalho (logo)
+    var headerHtml = `
+        <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+            <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
+        </div>
+    `;
+
     var printWindow = window.open('', '', 'height=700,width=900');
 
     printWindow.document.write(`
@@ -35,6 +43,7 @@ function printTable() {
                 </style>
             </head>
             <body>
+                ${headerHtml}
                 ${tableHtml}
             </body>
         </html>
@@ -42,7 +51,7 @@ function printTable() {
 
     printWindow.document.close();
 
-    printWindow.onload = function() {
+    printWindow.onload = function () {
         printWindow.focus();
         printWindow.print();
         printWindow.close();

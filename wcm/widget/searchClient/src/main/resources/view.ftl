@@ -1,6 +1,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance()">
 
+<!-- Cabeçalho Fluig com apenas o logo da empresa -->
+<header id="printHeader" style="display:none; justify-content: flex-start; background-color: white; padding: 10px; border-bottom: 1px solid #ccc;">
+    <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
+</header>
+
+
+<div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance()">
     <section class="panel panel-default fs-display-flex fs-flex-direction-column fs-flex-wrap-wrap col-md-12">
         
         <div class="col-md-12 panel-heading">

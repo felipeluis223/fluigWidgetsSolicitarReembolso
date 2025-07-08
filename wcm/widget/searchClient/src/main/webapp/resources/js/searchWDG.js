@@ -46,7 +46,7 @@ var Search = SuperWidget.extend({
         var query = `datasetId=dsGetClienteFiltro&${constraints.join("&")}&limit=300`;
         var url = `/api/public/ecm/dataset/search?${query}`;
 
-        console.log("URL com filtros CNPJ e Nome Reduzido:", url);
+        console.log("URL com filtros CNPJ e Nome Reduzido: ", url);
 
         FluigUtils.restCall({
             method: 'GET',
