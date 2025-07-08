@@ -7,9 +7,6 @@ function printTable() {
         </div>
     `;
 
-    var footerHtml = `
-        <div id="pageFooter">Página </div>
-    `;
 
     var printWindow = window.open('', '', 'height=700,width=900');
 
@@ -60,16 +57,11 @@ function printTable() {
                         padding: 6px 0;
                         background: white;
                     }
-                    /* Conteúdo da numeração da página */
-                    #pageFooter::after {
-                        content: counter(page);
-                    }
                 </style>
             </head>
             <body>
                 ${headerHtml}
                 ${tableHtml}
-                ${footerHtml}
             </body>
         </html>
     `);
