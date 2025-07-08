@@ -43,7 +43,7 @@ function renderTable(data) {
 
     // Inicializa DataTables com paginação visual e texto customizado no search
     $('#tableClientes').DataTable({
-        pageLength: 20,
+        pageLength: 10,
         lengthChange: false,
         ordering: false,
         info: true,
