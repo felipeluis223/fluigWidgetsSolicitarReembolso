@@ -1,42 +1,59 @@
-/* Coloque aqui seu codigo CSS */
-.backgroundGreen {
-    background-color: #35825e;
-}
-
-/* Trabalhando com a função Impressão do Browser */
 @media print {
-  table {
-    width: 100% !important;
-    table-layout: fixed !important;
-    font-size: 7px !important;
-    word-break: break-word !important;
-  }
+    @page {
+        margin: 20mm;
+    }
 
-  th, td {
-    padding: 2px 3px !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    body {
+        counter-reset: page;
+        margin: 0;
+        padding: 0;
+    }
 
-  body {
-    margin: 0;
-    padding: 0;
-  }
+    /* Rodapé fixo na página */
+    #pageFooter {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+        color: #555;
+        border-top: 1px solid #ccc;
+        background: white;
+        padding-top: 5px;
+    }
 
-  /* Oculta botões e filtros durante a impressão */
-  #btnBuscarDados,
-  .form-group,
-  .panel-heading,
-  .panel-title,
-  .pagination-controls,
-  button {
-    display: none !important;
-  }
+    #pageFooter::after {
+        content: counter(page);
+    }
 
-  /* Deixa só a tabela visível */
-  #target {
-    margin: 0;
-    padding: 0;
-  }
+    /* Ocultar elementos que não deseja imprimir */
+    #btnBuscarDados,
+    .form-group,
+    .panel-heading,
+    .panel-title,
+    .pagination-controls,
+    button {
+        display: none !important;
+    }
+
+    table {
+        width: 100% !important;
+        table-layout: fixed !important;
+        font-size: 7px !important;
+        word-break: break-word !important;
+    }
+
+    th, td {
+        padding: 2px 3px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #target {
+        margin: 0;
+        padding: 0;
+    }
 }

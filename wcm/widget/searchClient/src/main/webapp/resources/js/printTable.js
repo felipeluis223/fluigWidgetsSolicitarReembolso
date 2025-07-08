@@ -1,11 +1,14 @@
 function printTable() {
     var tableHtml = document.getElementById('target').innerHTML;
 
-    // Conteúdo do cabeçalho (logo)
     var headerHtml = `
         <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
             <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
         </div>
+    `;
+
+    var footerHtml = `
+        <div id="pageFooter">Página </div>
     `;
 
     var printWindow = window.open('', '', 'height=700,width=900');
@@ -15,10 +18,15 @@ function printTable() {
             <head>
                 <title>Imprimir</title>
                 <style>
+                    @page {
+                        margin: 20mm;
+                    }
                     body {
                         font-family: Arial, sans-serif;
                         font-size: 10px;
-                        margin: 20px;
+                        margin: 0;
+                        padding: 0;
+                        counter-reset: page;
                     }
                     table {
                         font-size: 9px;
@@ -40,11 +48,28 @@ function printTable() {
                     tr {
                         page-break-inside: avoid;
                     }
+                    #pageFooter {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 10px;
+                        color: #555;
+                        border-top: 1px solid #ccc;
+                        padding: 6px 0;
+                        background: white;
+                    }
+                    /* Conteúdo da numeração da página */
+                    #pageFooter::after {
+                        content: counter(page);
+                    }
                 </style>
             </head>
             <body>
                 ${headerHtml}
                 ${tableHtml}
+                ${footerHtml}
             </body>
         </html>
     `);
