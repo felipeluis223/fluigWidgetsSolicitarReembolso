@@ -9,6 +9,34 @@
     counter-reset: page;
   }
 
+  #printHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Containers 50% cada */
+  #printHeader .header-left,
+  #printHeader .header-right {
+    width: 50%;
+  }
+
+  /* Ajuste para o conteúdo da direita */
+  #printHeader .header-right {
+    padding-left: 20px;
+  }
+
+  /* Ajusta o título e a descrição */
+  #printHeader h3 {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+  }
+
+  #printHeader span {
+    font-size: 0.9em;
+    color: #555;
+  }
+
   /* Oculta elementos não imprimíveis */
   #btnBuscarDados,
   .form-group,

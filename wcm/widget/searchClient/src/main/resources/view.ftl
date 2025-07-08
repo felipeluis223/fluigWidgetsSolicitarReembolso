@@ -4,8 +4,17 @@
 
 
 <!-- Cabeçalho Fluig com apenas o logo da empresa -->
-<header id="printHeader" style="display:none; justify-content: flex-start; background-color: white; padding: 10px; border-bottom: 1px solid #ccc;">
+<header id="printHeader" style="display:none; background-color: white; padding: 10px; border-bottom: 1px solid #ccc;">
+
+  <div class="header-left">
     <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
+  </div>
+
+  <div class="header-right">
+    <h3>Consulta de Clientes</h3>
+    <span>Dataset que reúne dados básicos e de contato dos clientes cadastrados, utilizado para consultas e processos de negócio que envolvem informações cadastrais.</span>
+  </div>
+
 </header>
 
 

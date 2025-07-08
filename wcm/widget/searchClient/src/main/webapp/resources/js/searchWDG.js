@@ -21,13 +21,14 @@ var Search = SuperWidget.extend({
 
     executeReport: function () {
         var cnpj = $("#cnpjInput").val().trim();
+        var nome = $("#nomeInput").val().trim();
         var nomeReduzido = $("#nreduzInput").val().trim();
 
         var constraints = [];
 
         if (cnpj) {
             constraints.push(
-                `constraintsField=A1_CGC`,
+                `constraintsField=cCNPJ`,
                 `constraintsInitialValue=${encodeURIComponent(cnpj)}`,
                 `constraintsType=MUST`,
                 `constraintsLikeSearch=false`
@@ -36,8 +37,16 @@ var Search = SuperWidget.extend({
 
         if (nomeReduzido) {
             constraints.push(
-                `constraintsField=A1_NREDUZ`,
+                `constraintsField=cNFANTASIA`,
                 `constraintsInitialValue=${encodeURIComponent('%' + nomeReduzido + '%')}`,
+                `constraintsType=MUST`,
+                `constraintsLikeSearch=true`
+            );
+        }
+        if (nome) {
+            constraints.push(
+                `constraintsField=cRAZAO`,
+                `constraintsInitialValue=${encodeURIComponent('%' + nome + '%')}`,
                 `constraintsType=MUST`,
                 `constraintsLikeSearch=true`
             );
@@ -52,15 +61,18 @@ var Search = SuperWidget.extend({
             method: 'GET',
             url: url
         }, function (result) {
+            console.log("CHECKDATA 1: ");
             if (result && result.status === 200) {
                 var records = result.response.content || result.response || [];
                 var mydata = [];
 
                 for (var index in records) {
+                    console.log("CHECKDATA 1.1: ");
                     var record = records[index];
                     var recordObject = {};
 
                     for (var columnName in record) {
+                        console.log("CHECKDATA 1.1.1: ");
                         if (record.hasOwnProperty(columnName)) {
                             recordObject[columnName] = record[columnName] || "";
                         }
