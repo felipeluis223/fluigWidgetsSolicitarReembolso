@@ -1,4 +1,3 @@
-// Função de criar a tabela com os dados:
 function renderTable(data) {
     if (!data || data.length === 0) {
         $("#target").html("<p>Nenhum dado encontrado.</p>");
@@ -9,10 +8,10 @@ function renderTable(data) {
         return key !== "A1_FILIAL";
     });
 
-    var table = '<table class="table table-sm table-striped table-bordered" ' +
-                'style="font-size: 9px; line-height: 1; border-collapse: collapse; width: 100%; table-layout: fixed;">';
-
+    // Criação da tabela HTML
+    var table = '<table id="tableClientes" class="table table-sm table-striped table-bordered display nowrap" style="width:100%;">';
     table += '<thead><tr>';
+    
     for (var i = 0; i < keys.length; i++) {
         var columnTitle = keys[i];
         if (keys[i] == "A1_COD") columnTitle = "Código";
@@ -26,23 +25,44 @@ function renderTable(data) {
         else if (keys[i] == "A1_INSCR") columnTitle = "Insc.Estadual";
         else if (keys[i] == "A1_MUN") columnTitle = "Município";
 
-        table += '<th style="padding: 2px 4px; border: 1px solid #ddd; cursor: pointer; word-wrap: break-word; white-space: normal;" class="fs-text-xs" data-col="' + i + '" data-order="desc">' + columnTitle + '</th>';
+        table += `<th data-col="${i}" data-order="desc" style="padding:2px 4px; font-size: 9px; border:1px solid #ddd; word-wrap: break-word; white-space: normal;">${columnTitle}</th>`;
     }
-    table += '</tr></thead>';
 
-    table += '<tbody>';
+    table += '</tr></thead><tbody>';
+
     for (var j = 0; j < data.length; j++) {
         table += '<tr>';
         for (var k = 0; k < keys.length; k++) {
-            table += '<td style="padding: 2px 4px; border: 1px solid #ddd; word-wrap: break-word; white-space: normal;" class="fs-text-xs">' + (data[j][keys[k]] || '') + '</td>';
+            table += `<td style="padding:2px 4px; font-size: 9px; border:1px solid #ddd; word-wrap: break-word; white-space: normal;">${data[j][keys[k]] || ''}</td>`;
         }
         table += '</tr>';
     }
-    table += '</tbody></table>';
 
+    table += '</tbody></table>';
     $("#target").html(table);
 
-    // Ordenação ao clicar no cabeçalho
+    // Inicializa DataTables com paginação visual e texto customizado no search
+    $('#tableClientes').DataTable({
+        pageLength: 20,
+        lengthChange: false,
+        ordering: false,
+        info: true,
+        paging: true,
+        pagingType: "simple_numbers",
+        language: {
+            search: "<span class='fs-text-md'>Buscar:</span>",                      // Label do campo de pesquisa
+            searchPlaceholder: "Digite para filtrar",  // Placeholder dentro do input
+            info: "Página _PAGE_ de _PAGES_",
+            paginate: {
+                previous: "Anterior",
+                next: "Próxima"
+            },
+            infoEmpty: "Sem registros",
+            zeroRecords: "Nenhum registro encontrado"
+        }
+    });
+
+    // Ordenação manual por clique (opcional se DataTables não ordenar)
     $("#target th").on('click', function () {
         var tableEl = $(this).closest('table');
         var tbody = tableEl.find('tbody');

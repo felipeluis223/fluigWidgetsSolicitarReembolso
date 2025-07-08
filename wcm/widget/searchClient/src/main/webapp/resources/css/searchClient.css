@@ -1,40 +1,115 @@
 @media print {
-    @page {
-        margin: 20mm;
-    }
+  @page {
+    margin: 20mm;
+  }
 
-    body {
-        counter-reset: page;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Ocultar elementos que não deseja imprimir */
-    #btnBuscarDados,
-    .form-group,
-    .panel-heading,
-    .panel-title,
-    .pagination-controls,
-    button {
-        display: none !important;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    counter-reset: page;
+  }
 
-    table {
-        width: 100% !important;
-        table-layout: fixed !important;
-        font-size: 7px !important;
-        word-break: break-word !important;
-    }
+  /* Oculta elementos não imprimíveis */
+  #btnBuscarDados,
+  .form-group,
+  .panel-heading,
+  .panel-title,
+  .pagination-controls,
+  button,
+  .dataTables_paginate,
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info {
+    display: none !important;
+  }
 
-    th, td {
-        padding: 2px 3px !important;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+  /* Força a tabela a imprimir toda, sem paginação */
+  #tableClientes {
+    display: table !important;
+    width: 100% !important;
+    font-size: 7px !important;
+    table-layout: fixed !important;
+    word-break: break-word !important;
+  }
 
-    #target {
-        margin: 0;
-        padding: 0;
-    }
+  #tableClientes tbody {
+    display: table-row-group !important;
+  }
+
+  #tableClientes tr {
+    display: table-row !important;
+    page-break-inside: avoid !important;
+  }
+
+  #target {
+    margin: 0;
+    padding: 0;
+  }
+
+  th, td {
+    padding: 2px 3px !important;
+    font-size: 7px !important;
+    white-space: normal !important;          /* permite quebra de linha */
+    overflow-wrap: break-word !important;    /* força quebra de palavra */
+    overflow: visible !important;             /* mostra todo o conteúdo */
+    text-overflow: clip !important;           /* sem reticências */
+    border: 1px solid #ccc;
+  }
+
+  /* Limite de largura e quebra para cada coluna específica */
+  #tableClientes th:nth-child(1),  /* ex: Filial */
+  #tableClientes td:nth-child(1) {
+    max-width: 40px !important;
+  }
+  #tableClientes th:nth-child(2),  /* Código */
+  #tableClientes td:nth-child(2) {
+    max-width: 50px !important;
+  }
+  #tableClientes th:nth-child(3),  /* Loja */
+  #tableClientes td:nth-child(3) {
+    max-width: 30px !important;
+  }
+  #tableClientes th:nth-child(4),  /* Nome */
+  #tableClientes td:nth-child(4) {
+    max-width: 120px !important;
+  }
+  #tableClientes th:nth-child(5),  /* Endereço */
+  #tableClientes td:nth-child(5) {
+    width: 100px !important;
+  }
+  #tableClientes th:nth-child(6),  /* Bairro */
+  #tableClientes td:nth-child(6) {
+    max-width: 50px !important;
+  }
+  #tableClientes th:nth-child(7),  /* Município */
+  #tableClientes td:nth-child(7) {
+    max-width: 50px !important;
+  }
+  #tableClientes th:nth-child(8),  /* E-mail */
+  #tableClientes td:nth-child(8) {
+    max-width: 90px !important;
+  }
+  #tableClientes th:nth-child(9),  /* CNPJ/CPF */
+  #tableClientes td:nth-child(9) {
+    max-width: 70px !important;
+  }
+  #tableClientes th:nth-child(10), /* Inscrição Estadual */
+  #tableClientes td:nth-child(10) {
+    max-width: 60px !important;
+  }
+
+  /* Rodapé com número da página */
+  #printFooter::after {
+    content: "Página " counter(page);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    padding: 6px 0;
+    color: #444;
+    border-top: 1px solid #ccc;
+    background: white;
+  }
 }
