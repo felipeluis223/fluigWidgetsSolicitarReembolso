@@ -7,7 +7,13 @@ var Search = SuperWidget.extend({
         var that = this;
 
         $(document).ready(function () {
+            // Aplicando mascaras:
+            $("#lojaInput").mask("00");
+
+
+
             $("#btnBuscarDados").click(function () {
+                
                 that.executeReport();
             });
 
@@ -72,7 +78,7 @@ executeReport: function () {
         return arr.map(v => `${name}=${encodeURIComponent(v)}`).join("&");
     }
 
-    var query = `datasetId=dsGetCliente&` +
+    var query = `datasetId=dsGetClienteFiltro&` +
         encodeArrayParam("constraintsField", constraintsField) + "&" +
         encodeArrayParam("constraintsInitialValue", constraintsInitialValue) + "&" +
         encodeArrayParam("constraintsType", constraintsType) + "&" +

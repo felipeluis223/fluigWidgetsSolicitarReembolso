@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance()">
 
     <section class="panel panel-default fs-display-flex fs-flex-direction-column fs-flex-wrap-wrap col-md-12">
