@@ -1,0 +1,155 @@
+[33mcommit 6f71f741e07fc14a852bef3aa1e92641021b67c2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Tue Jul 8 10:07:27 2025 -0300
+
+    fix: alterações.
+
+[33mcommit fcf3302377a286da4f7860ae6b98ece530af4c06[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 16:48:09 2025 -0300
+
+    chore: tentando aplicar filtro.
+
+[33mcommit c91aed3f32f9d64b9b40009a95f0120919984c5d[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 15:50:29 2025 -0300
+
+    chore: tentando aplicar filtro.
+
+[33mcommit 47f91198edb060969638f0b7a918c58a314e9e18[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:54:11 2025 -0300
+
+    chore: removendo binding.
+
+[33mcommit 2af0960c345078b1bfc538af5c1718e9d4678a6d[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:48:18 2025 -0300
+
+    chore: refatoração da funcionalidade de imprimir - PDF.
+
+[33mcommit 4900b05f6a457a947926ef72bfbce89bdf64a124[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:30:17 2025 -0300
+
+    fix: quebra de linha para não 'vazar' conteúdo na célula seguinte.
+
+[33mcommit c4ef38b27382b9f32fe37f100a4f6377e28ba88f[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:28:01 2025 -0300
+
+    feat: função de imprimir - PDF.
+
+[33mcommit 3b6a0f6c5f6c91b67d3138c9f06ab83a79e1a65f[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:15:39 2025 -0300
+
+    chore: exportando a funcionalidade de criar tabela consumindo os dados para um arquivo externo.
+
+[33mcommit 83344e2bad688f210629464125ea309e5082fb88[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 11:06:22 2025 -0300
+
+    feat: renomeando as colunas e removendo a coluna A1_FILIAL - vazio.
+
+[33mcommit 738b7f2f9a84dcf08f20b082d2fb955ee47c9bcb[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 10:50:14 2025 -0300
+
+    feat: aplicando ordenação na tabela.
+
+[33mcommit 7c0f0d51e1196b64252800f8a66dfeb4df267937[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 10:28:58 2025 -0300
+
+    chore: aplicando estilização na tabela.
+
+[33mcommit c4a5761474f9fd20a8dcbd0cf173e68df3a6073d[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 10:11:42 2025 -0300
+
+    feat: aplicando tabela simples com valores.
+
+[33mcommit 8124841dc600dc14303211907b7196318c54e59a[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 10:03:15 2025 -0300
+
+    chore: removendo logs.
+
+[33mcommit 00588b658ac76cc99c294f517bee276d75e99752[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 09:36:20 2025 -0300
+
+    chore: exportando as funcionalidades para arquivos externos.
+
+[33mcommit 7ff36598a4d3c91f65c88adb44944506a5f508bf[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Fri Jul 4 09:24:45 2025 -0300
+
+    fix: Obtendo Dataset.
+
+[33mcommit fb13c7feb8583fba89370080f984053e9bf46102[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 17:24:45 2025 -0300
+
+    chore: tentando obter Dataset através da API.
+
+[33mcommit 3ea8788b53449e11f228813ea5c60717d3b5f1e7[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 16:13:29 2025 -0300
+
+    feat: aplicando requisição de API no botão de Dataset (Filtro).
+
+[33mcommit 3cfe48a5b0147d7339ca2b7a74f8bb7d572e2613[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 14:59:48 2025 -0300
+
+    chore: ajuste.
+
+[33mcommit dd06340621cb4bf752d07ea3fa3fce9fd59f9b4b[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 14:27:34 2025 -0300
+
+    chore: aplicando Dataset na tabela.
+
+[33mcommit ad85161e0373ca63df409604f02ea8588af10490[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 14:01:04 2025 -0300
+
+    feat: alterando a tabela conforme a necessidade do projeto.
+
+[33mcommit 67fdf08ab017e0857b0f66baaf7c26ccc515587f[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 13:57:01 2025 -0300
+
+    feat: aplicando a tabela com as informações.
+
+[33mcommit bc7a87712327797b1adf09f28f5a949a29e8ffe9[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 13:27:33 2025 -0300
+
+    feat: aplicando botões de limpar/filtrar.
+
+[33mcommit b184a6a708cbd6c9a1510975c0d9c4c300fcf3a7[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 11:46:43 2025 -0300
+
+    fix: ajuste na estilização.
+
+[33mcommit 3175e205aa93870b66089004c2578047ed74973e[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 11:41:58 2025 -0300
+
+    feat: widget de pesquisa - inputs.
+
+[33mcommit c393c49d12e90d05fef813e44cbc13d2977c0177[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 10:48:54 2025 -0300
+
+    feat: aplicando a função de imprimir PDF no Widget.
+
+[33mcommit 14397b23c4480e26b3e025db5c4bea8d1e32bc3f[m
+Author: felipeluis223 <lf9072962@gmail.com>
+Date:   Thu Jul 3 08:45:46 2025 -0300
+
+    feat: estrutura de widget.
