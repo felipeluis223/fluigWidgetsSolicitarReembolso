@@ -28,7 +28,7 @@ executeReport: function () {
     var i = 0;
 
     if (cnpj) {
-        constraints.push(`constraintsField[${i}]=cCNPJ`);
+        constraints.push(`constraintsField[${i}]=A1_CGC`);
         constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent(cnpj)}`);
         constraints.push(`constraintsType[${i}]=MUST`);
         constraints.push(`constraintsLikeSearch[${i}]=false`);
@@ -36,7 +36,7 @@ executeReport: function () {
     }
 
     if (nomeReduzido) {
-        constraints.push(`constraintsField[${i}]=cNFANTASIA`);
+        constraints.push(`constraintsField[${i}]=A1_NREDUZ`);
         constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nomeReduzido + '%')}`);
         constraints.push(`constraintsType[${i}]=MUST`);
         constraints.push(`constraintsLikeSearch[${i}]=true`);
@@ -44,7 +44,7 @@ executeReport: function () {
     }
 
     if (nome) {
-        constraints.push(`constraintsField[${i}]=cRAZAO`);
+        constraints.push(`constraintsField[${i}]=A1_NOME`);
         constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nome + '%')}`);
         constraints.push(`constraintsType[${i}]=MUST`);
         constraints.push(`constraintsLikeSearch[${i}]=true`);
@@ -52,6 +52,7 @@ executeReport: function () {
     }
 
     // LIMIT deve ficar fora das constraints!
+    console.log('CONSTRAINT: ' + constraints);
     var query = `datasetId=dsGetClienteFiltro&${constraints.join("&")}&limit=300`;
     var url = `/api/public/ecm/dataset/search?${query}`;
 
