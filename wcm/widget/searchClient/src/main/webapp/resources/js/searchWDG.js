@@ -19,74 +19,72 @@ var Search = SuperWidget.extend({
         });
     },
 
-    executeReport: function () {
-        var cnpj = $("#cnpjInput").val().trim();
-        var nome = $("#nomeInput").val().trim();
-        var nomeReduzido = $("#nreduzInput").val().trim();
+executeReport: function () {
+    var cnpj = $("#cnpjInput").val().trim();
+    var nome = $("#nomeInput").val().trim();
+    var nomeReduzido = $("#nreduzInput").val().trim();
 
-        var constraints = [];
+    var constraints = [];
+    var i = 0;
 
-        if (cnpj) {
-            constraints.push(
-                `constraintsField=cCNPJ`,
-                `constraintsInitialValue=${encodeURIComponent(cnpj)}`,
-                `constraintsType=MUST`,
-                `constraintsLikeSearch=false`
-            );
-        }
+    if (cnpj) {
+        constraints.push(`constraintsField[${i}]=cCNPJ`);
+        constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent(cnpj)}`);
+        constraints.push(`constraintsType[${i}]=MUST`);
+        constraints.push(`constraintsLikeSearch[${i}]=false`);
+        i++;
+    }
 
-        if (nomeReduzido) {
-            constraints.push(
-                `constraintsField=cNFANTASIA`,
-                `constraintsInitialValue=${encodeURIComponent('%' + nomeReduzido + '%')}`,
-                `constraintsType=MUST`,
-                `constraintsLikeSearch=true`
-            );
-        }
-        if (nome) {
-            constraints.push(
-                `constraintsField=cRAZAO`,
-                `constraintsInitialValue=${encodeURIComponent('%' + nome + '%')}`,
-                `constraintsType=MUST`,
-                `constraintsLikeSearch=true`
-            );
-        }
+    if (nomeReduzido) {
+        constraints.push(`constraintsField[${i}]=cNFANTASIA`);
+        constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nomeReduzido + '%')}`);
+        constraints.push(`constraintsType[${i}]=MUST`);
+        constraints.push(`constraintsLikeSearch[${i}]=true`);
+        i++;
+    }
 
-        var query = `datasetId=dsGetClienteFiltro&${constraints.join("&")}&limit=300`;
-        var url = `/api/public/ecm/dataset/search?${query}`;
+    if (nome) {
+        constraints.push(`constraintsField[${i}]=cRAZAO`);
+        constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nome + '%')}`);
+        constraints.push(`constraintsType[${i}]=MUST`);
+        constraints.push(`constraintsLikeSearch[${i}]=true`);
+        i++;
+    }
 
-        console.log("URL com filtros CNPJ e Nome Reduzido: ", url);
+    // LIMIT deve ficar fora das constraints!
+    var query = `datasetId=dsGetClienteFiltro&${constraints.join("&")}&limit=300`;
+    var url = `/api/public/ecm/dataset/search?${query}`;
 
-        FluigUtils.restCall({
-            method: 'GET',
-            url: url
-        }, function (result) {
-            console.log("CHECKDATA 1: ");
-            if (result && result.status === 200) {
-                var records = result.response.content || result.response || [];
-                var mydata = [];
+    console.log("URL com filtros CNPJ e Nome Reduzido: ", url);
 
-                for (var index in records) {
-                    console.log("CHECKDATA 1.1: ");
-                    var record = records[index];
-                    var recordObject = {};
+    FluigUtils.restCall({
+        method: 'GET',
+        url: url
+    }, function (result) {
+        if (result && result.status === 200) {
+            var records = result.response.content || result.response || [];
+            var mydata = [];
 
-                    for (var columnName in record) {
-                        console.log("CHECKDATA 1.1.1: ");
-                        if (record.hasOwnProperty(columnName)) {
-                            recordObject[columnName] = record[columnName] || "";
-                        }
+            for (var index in records) {
+                var record = records[index];
+                var recordObject = {};
+
+                for (var columnName in record) {
+                    if (record.hasOwnProperty(columnName)) {
+                        recordObject[columnName] = record[columnName] || "";
                     }
-
-                    mydata.push(recordObject);
                 }
 
-                console.log('REQ WIDGET - Dados encontrados:', mydata);
-                renderTable(mydata);
-
-            } else {
-                console.error('Erro ao buscar dataset:', result.statusText);
+                mydata.push(recordObject);
             }
-        });
-    }
+
+            console.log('REQ WIDGET - Dados encontrados:', mydata);
+            renderTable(mydata);
+
+        } else {
+            console.error('Erro ao buscar dataset:', result.statusText);
+        }
+    });
+}
+
 });
