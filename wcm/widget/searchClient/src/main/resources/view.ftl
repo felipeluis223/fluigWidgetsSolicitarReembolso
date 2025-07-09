@@ -109,7 +109,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="collapse-icon" href="#collapseOneExemple">
-              Collapsible Group Item 1
+                Configurações Avançadas
             </a>
           </h4>
           <p class="collapse-text">Clique para exibir detalhes adicionais.</p>
