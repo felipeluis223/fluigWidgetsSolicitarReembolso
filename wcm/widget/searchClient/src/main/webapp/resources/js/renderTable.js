@@ -4,14 +4,29 @@ function renderTable(data) {
         return;
     }
 
-    var keys = Object.keys(data[0]).filter(function(key) {
-        return key !== "A1_FILIAL";
+    // Destroi DataTable se existir
+    if ($.fn.DataTable.isDataTable('#tableClientes')) {
+        $('#tableClientes').DataTable().clear().destroy();
+    }
+
+    // Pega as colunas selecionadas pelos toggles
+    var selectedColumns = $(".toggle-column:checked").map(function () {
+        return $(this).data("column");
+    }).get();
+
+    var keys = Object.keys(data[0]).filter(function (key) {
+        return key !== "A1_FILIAL" && selectedColumns.includes(key);
     });
+
+    if (keys.length === 0) {
+        $("#target").html("<p>Nenhuma coluna selecionada.</p>");
+        return;
+    }
 
     // Criação da tabela HTML
     var table = '<table id="tableClientes" class="table table-sm table-striped table-bordered display nowrap" style="width:100%;">';
     table += '<thead><tr>';
-    
+
     for (var i = 0; i < keys.length; i++) {
         var columnTitle = keys[i];
         if (keys[i] == "A1_COD") columnTitle = "Código";
@@ -41,7 +56,7 @@ function renderTable(data) {
     table += '</tbody></table>';
     $("#target").html(table);
 
-    // Inicializa DataTables com paginação visual e texto customizado no search
+    // Inicializa DataTables
     $('#tableClientes').DataTable({
         pageLength: 10,
         lengthChange: false,
@@ -50,8 +65,8 @@ function renderTable(data) {
         paging: true,
         pagingType: "simple_numbers",
         language: {
-            search: "<span class='fs-text-md'>Buscar:</span>",                      // Label do campo de pesquisa
-            searchPlaceholder: "Digite para filtrar",  // Placeholder dentro do input
+            search: "<span class='fs-text-md'>Buscar:</span>",
+            searchPlaceholder: "Digite para filtrar",
             info: "Página _PAGE_ de _PAGES_",
             paginate: {
                 previous: "Anterior",
@@ -62,7 +77,7 @@ function renderTable(data) {
         }
     });
 
-    // Ordenação manual por clique (opcional se DataTables não ordenar)
+    // Ordenação manual (opcional)
     $("#target th").on('click', function () {
         var tableEl = $(this).closest('table');
         var tbody = tableEl.find('tbody');
@@ -90,7 +105,7 @@ function renderTable(data) {
             return 0;
         });
 
-        $.each(rows, function(index, row) {
+        $.each(rows, function (index, row) {
             tbody.append(row);
         });
     });

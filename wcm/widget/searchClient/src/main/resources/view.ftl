@@ -98,7 +98,7 @@
           </div>
         </div>
         <div class="col-md-8 fs-display-flex fs-md-gap fs-lg-margin-top">
-          <button type="button" class="btn btn-default">Limpar</button>
+          <button type="button" class="btn btn-default" id="btnLimpar">Limpar</button>
           <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
           <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
         </div>
@@ -125,7 +125,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Código</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-1" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-1" data-column="A1_COD" checked />
                       <label class="switch-button" for="switch-1">Toggle</label>
                     </div>
                   </div>
@@ -137,7 +137,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Nome reduzido</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-2" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-2" data-column="A1_NREDUZ" checked />
                       <label class="switch-button" for="switch-2">Toggle</label>
                     </div>
                   </div>
@@ -149,7 +149,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Bairro</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-3" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-3" data-column="A1_BAIRRO" checked />
                       <label class="switch-button" for="switch-3">Toggle</label>
                     </div>
                   </div>
@@ -161,7 +161,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Endereço</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-4" data-column="A1_END" checked />
                       <label class="switch-button" for="switch-4">Toggle</label>
                     </div>
                   </div>
@@ -173,7 +173,7 @@
                   <div class="col-md-9" style="font-size: 12px;">E-mail</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-5" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-5" data-column="A1_EMAIL" checked />
                       <label class="switch-button" for="switch-5">Toggle</label>
                     </div>
                   </div>
@@ -188,7 +188,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Loja</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-6" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-6" data-column="A1_LOJA" checked />
                       <label class="switch-button" for="switch-6">Toggle</label>
                     </div>
                   </div>
@@ -200,7 +200,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Nome</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-7" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-7" data-column="A1_NOME" checked />
                       <label class="switch-button" for="switch-7">Toggle</label>
                     </div>
                   </div>
@@ -212,7 +212,7 @@
                   <div class="col-md-9" style="font-size: 12px;">CNPJ/CPF</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-8" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-8" data-column="A1_CGC" checked />
                       <label class="switch-button" for="switch-8">Toggle</label>
                     </div>
                   </div>
@@ -224,7 +224,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Insc.Estadual</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-9" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-9" data-column="A1_INSCR" checked />
                       <label class="switch-button" for="switch-9">Toggle</label>
                     </div>
                   </div>
@@ -236,7 +236,7 @@
                   <div class="col-md-9" style="font-size: 12px;">Município</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-10" />
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-10" data-column="A1_MUN" checked />
                       <label class="switch-button" for="switch-10">Toggle</label>
                     </div>
                   </div>
@@ -269,6 +269,13 @@
 
       // Alterna visibilidade do atual
       $(target).slideToggle();
+    });
+
+    // Botão limpar (limpa filtros e tabela)
+    $("#btnLimpar").click(function () {
+      $("input[type=text], input[type=email]").val("");
+      $(".toggle-column").prop("checked", true);
+      $("#target").html("");
     });
   });
 </script>
