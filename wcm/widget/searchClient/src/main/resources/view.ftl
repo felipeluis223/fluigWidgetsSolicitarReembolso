@@ -19,7 +19,7 @@
   <section class="panel panel-default">
 
     <!-- Título -->
-    <div class="panel-heading">
+    <div class="panel-heading" style="background-color: #35825e; color: #ffffff;">
       <h3 class="panel-title">Consulta de Clientes Cadastrados</h3>
     </div>
 
@@ -110,7 +110,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="collapse-icon" href="#collapseOneExemple">
+            <a class="collapse-icon" style="background-color: #35825e; color: #ffffff;" href="#collapseOneExemple">
               <strong>Configurações Avançadas</strong>
             </a>
           </h4>
