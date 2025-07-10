@@ -116,7 +116,7 @@
           </h4>
         </div>
         <div id="collapseOneExemple" class="collapse-content fs-lg-margin-left" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
-          <span>Exibir e ocultar colunas da tabela:</span>
+          <span>Personalizar colunas exibidas na tabela</span>
           <div class="row fs-md-margin-vertical fs-md-gap">
             <!-- 1º Coluna de Toggles -->
             <div class="col-md-2">
