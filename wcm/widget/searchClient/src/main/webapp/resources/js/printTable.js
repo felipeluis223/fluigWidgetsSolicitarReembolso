@@ -1,26 +1,31 @@
 function printTable() {
     var table = $('#tableClientes').DataTable();
 
-    // Torna todas as colunas visíveis temporariamente para impressão
+    // Força todas as colunas visíveis temporariamente para impressão
     table.columns().visible(true);
 
-    // Pega todas as linhas visíveis após filtro, independente da paginação
-    var allRows = table.rows({ search: 'applied' }).nodes().to$();
+    // Pega dados das linhas visíveis após filtro (search: 'applied')
+    var dataRows = table.rows({ search: 'applied' }).data();
 
-    // Clona a tabela atual (com todas as colunas agora visíveis)
-    var tableClone = $('#tableClientes').clone();
+    // Monta HTML das linhas manualmente
+    var rowsHtml = '';
+    dataRows.each(function(rowData) {
+        rowsHtml += '<tr>';
+        // Supondo que rowData seja um array (ou objeto, adapte conforme seu dataset)
+        for (var i = 0; i < rowData.length; i++) {
+            rowsHtml += '<td>' + rowData[i] + '</td>';
+        }
+        rowsHtml += '</tr>';
+    });
 
-    // Limpa o corpo da tabela clonada
-    tableClone.find('tbody').empty();
+    // Clona cabeçalho da tabela para impressão
+    var headerHtml = $('#tableClientes thead').prop('outerHTML');
 
-    // Insere todas as linhas na tabela clonada
-    tableClone.find('tbody').append(allRows);
-
-    var headerHtml = `
-        <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
-            <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
-        </div>
-    `;
+    // Monta tabela completa para impressão
+    var tableHtml = '<table id="tableClientes" style="width:100%; border-collapse: collapse;" border="1">' +
+        headerHtml +
+        '<tbody>' + rowsHtml + '</tbody>' +
+        '</table>';
 
     var printWindow = window.open('', '', 'height=700,width=900');
 
@@ -29,15 +34,10 @@ function printTable() {
             <head>
                 <title>Imprimir</title>
                 <style>
-                    @page {
-                        margin: 20mm;
-                    }
                     body {
                         font-family: Arial, sans-serif;
                         font-size: 10px;
-                        margin: 0;
-                        padding: 0;
-                        counter-reset: page;
+                        margin: 20mm;
                     }
                     table {
                         font-size: 9px;
@@ -61,43 +61,13 @@ function printTable() {
                     tr {
                         page-break-inside: avoid;
                     }
-                    /* Limitar largura da coluna Nome (4ª coluna) e Endereço (5ª coluna) */
-                    #tableClientes th:nth-child(4),
-                    #tableClientes td:nth-child(4),
-                    #tableClientes th:nth-child(5),
-                    #tableClientes td:nth-child(5),
-                    #tableClientes th:nth-child(7),
-                    #tableClientes th:nth-child(7) {
-                        max-width: 100px;
-                        width: 100px;
-                    }
-                    /* Limitar largura da coluna E-mail (8ª coluna) */
-                    #tableClientes th:nth-child(8),
-                    #tableClientes td:nth-child(8) {
-                        max-width: 150px;
-                        width: 150px;
-                    }
-                    #pageFooter {
-                        position: fixed;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        text-align: center;
-                        font-size: 10px;
-                        color: #555;
-                        border-top: 1px solid #ccc;
-                        padding: 6px 0;
-                        background: white;
-                    }
-                    #pageFooter::after {
-                        content: "Página " counter(page);
-                    }
                 </style>
             </head>
             <body>
-                ${headerHtml}
-                ${tableClone.prop('outerHTML')}
-                <div id="pageFooter"></div>
+                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+                    <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
+                </div>
+                ${tableHtml}
             </body>
         </html>
     `);
@@ -109,7 +79,7 @@ function printTable() {
         printWindow.print();
         printWindow.close();
 
-        // Depois da impressão, restaura a visibilidade original das colunas
+        // Restaura visibilidade original das colunas
         table.columns().visible(true);
     };
 }
