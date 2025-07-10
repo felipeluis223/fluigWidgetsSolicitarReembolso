@@ -115,10 +115,11 @@
             </a>
           </h4>
         </div>
-        <div id="collapseOneExemple" class="collapse-content" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
-          <div class="row">
+        <div id="collapseOneExemple" class="collapse-content fs-lg-margin-left" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
+          <span>Exibir e ocultar colunas da tabela:</span>
+          <div class="row fs-md-margin-vertical fs-md-gap">
+            <!-- 1º Coluna de Toggles -->
             <div class="col-md-2">
-
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Código</div>
@@ -130,7 +131,7 @@
                   </div>
                 </li>
               </ul>
-
+              
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Nome reduzido</div>
@@ -178,7 +179,10 @@
                   </div>
                 </li>
               </ul>
+            </div>
 
+            <!-- 2º Coluna de Toggles -->
+            <div class="col-md-2">
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Loja</div>
@@ -238,8 +242,8 @@
                   </div>
                 </li>
               </ul>
-
             </div>
+
           </div>
         </div>
       </div>
