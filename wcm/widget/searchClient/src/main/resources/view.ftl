@@ -110,12 +110,12 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="collapse-icon" style="background-color: #35825e; color: #ffffff;" href="#collapseOneExemple">
+            <a class="collapse-icon" href="#collapseOneExemple">
               <strong>Configurações Avançadas</strong>
             </a>
           </h4>
         </div>
-        <div id="collapseOneExemple" class="collapse-content fs-lg-margin-left" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
+        <div id="collapseOneExemple" class="collapse-content fs-lg-margin-left" style="padding: 10px; border-top: 1px solid #ffffff; display: none;">
           <span>Personalizar colunas exibidas na tabela</span>
           <div class="row fs-md-margin-vertical fs-md-gap">
             <!-- 1º Coluna de Toggles -->
