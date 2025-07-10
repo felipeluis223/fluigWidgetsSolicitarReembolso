@@ -16,130 +16,237 @@
 
 <!-- Widget -->
 <div id="Search_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Search.instance()">
-  <section class="panel panel-default col-md-12">
+  <section class="panel panel-default">
 
     <!-- Título -->
-    <div class="col-md-12 panel-heading">
+    <div class="panel-heading">
       <h3 class="panel-title">Consulta de Clientes Cadastrados</h3>
     </div>
 
     <!-- Filtros -->
-    <div class="panel-body col-md-12 fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row fs-md-margin-vertical">
-      <!-- 1° Linha -->
-      <div class="col-md-2">
-        <div class="form-group">
-          <label for="filialInput">Filial:</label>
-          <input type="text" class="form-control" id="filialInput" placeholder="Ex.: 00000">
+    <div class="panel-body fs-display-flex fs-flex-wrap-wrap fs-flex-direction-row fs-md-margin-vertical">
+      <div class="row">
+        <!-- 1° Linha -->
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="filialInput">Filial:</label>
+            <input type="text" class="form-control" id="filialInput" placeholder="Ex.: 00000">
+          </div>
         </div>
-      </div>
-      <div class="col-md-2">
-        <div class="form-group">
-          <label for="codigoInput">Código:</label>
-          <input type="text" class="form-control" id="codigoInput" placeholder="Ex.: 0000000">
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="codigoInput">Código:</label>
+            <input type="text" class="form-control" id="codigoInput" placeholder="Ex.: 0000000">
+          </div>
         </div>
-      </div>
-      <div class="col-md-2">
-        <div class="form-group">
-          <label for="lojaInput">Loja:</label>
-          <input type="text" class="form-control" id="lojaInput" placeholder="Ex.: 00">
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="lojaInput">Loja:</label>
+            <input type="text" class="form-control" id="lojaInput" placeholder="Ex.: 00">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="nomeInput">Nome:</label>
-          <input type="text" class="form-control" id="nomeInput" placeholder="Ex.: João Silva">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="nomeInput">Nome:</label>
+            <input type="text" class="form-control" id="nomeInput" placeholder="Ex.: João Silva">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="nreduzInput">Nome Reduzido:</label>
-          <input type="text" class="form-control" id="nreduzInput" placeholder="Ex.: J. Silva">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="nreduzInput">Nome Reduzido:</label>
+            <input type="text" class="form-control" id="nreduzInput" placeholder="Ex.: J. Silva">
+          </div>
         </div>
-      </div>
 
-      <!-- 2° Linha -->
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="enderecoInput">Endereço:</label>
-          <input type="text" class="form-control" id="enderecoInput" placeholder="Ex.: Rua Exemplo, 123">
+        <!-- 2° Linha -->
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="enderecoInput">Endereço:</label>
+            <input type="text" class="form-control" id="enderecoInput" placeholder="Ex.: Rua Exemplo, 123">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="bairroInput">Bairro:</label>
-          <input type="text" class="form-control" id="bairroInput" placeholder="Ex.: Centro">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="bairroInput">Bairro:</label>
+            <input type="text" class="form-control" id="bairroInput" placeholder="Ex.: Centro">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="municipioInput">Município:</label>
-          <input type="text" class="form-control" id="municipioInput" placeholder="Ex.: São Paulo">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="municipioInput">Município:</label>
+            <input type="text" class="form-control" id="municipioInput" placeholder="Ex.: São Paulo">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="form-group">
-          <label for="emailInput">E-mail:</label>
-          <input type="email" class="form-control" id="emailInput" placeholder="Ex.: cliente@email.com">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="emailInput">E-mail:</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="Ex.: cliente@email.com">
+          </div>
         </div>
-      </div>
 
-      <!-- 3° Linha -->
-      <div class="col-md-2">
-        <div class="form-group">
-          <label for="cnpjInput">CNPJ/CPF:</label>
-          <input type="text" class="form-control" id="cnpjInput" placeholder="Ex.: 00.000.000/0000-00">
+        <!-- 3° Linha -->
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="cnpjInput">CNPJ/CPF:</label>
+            <input type="text" class="form-control" id="cnpjInput" placeholder="Ex.: 00.000.000/0000-00">
+          </div>
         </div>
-      </div>
-      <div class="col-md-2">
-        <div class="form-group">
-          <label for="inscrInput">Inscrição Estadual:</label>
-          <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="inscrInput">Inscrição Estadual:</label>
+            <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 fs-display-flex fs-align-items-center fs-md-gap">
-        <button type="button" class="btn btn-default">Limpar</button>
-        <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
-        <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
+        <div class="col-md-8 fs-display-flex fs-align-items-center fs-md-gap">
+          <button type="button" class="btn btn-default">Limpar</button>
+          <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
+          <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
+        </div>
       </div>
     </div>
 
     <!-- Accordion -->
-    <div class="col-md-12 panel-group clean-collapse" id="accordion">
+    <div class="panel-group clean-collapse" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="collapse-icon" href="#collapseOneExemple">
-                <strong>Configurações Avançadas</strong>
+              <strong>Configurações Avançadas</strong>
             </a>
           </h4>
         </div>
-        <div id="collapseOneExemple" class="collapse-content" style="display:none; padding: 10px; border-top: 1px solid #ccc;">
-          <ul class="list-group col-md-2 ">
-            <li class="list-group-item fs-bg-info">Cras justo odio</li>
-          </ul>
+        <div id="collapseOneExemple" class="collapse-content" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
+          <div class="row">
+            <div class="col-md-2">
+              
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Código</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Nome reduzido</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
 
-          <!-- <div class="switch switch-success switch-sm">
-            <input class="switch-input" type="checkbox" id="switch-4-4" />
-            <label class="switch-button" for="switch-4-4">Toggle</label>
-          </div> -->
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Bairro</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
 
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Endereço</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">	E-mail</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Loja</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Nome</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">CNPJ/CPF	</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Insc.Estadual	</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Município</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input" type="checkbox" id="switch-4-4" />
+                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- <div class="col-md-2 fs-display-flex fs-align-items-center fs-direction-row ">
-      <div class="col-md-7 fs-bg-success">Nome reduzido</div>
-      <div class="col-md-2 fs-bg-warning">
-        <div class="switch switch-success switch-sm">
-          <input class="switch-input" type="checkbox" id="switch-4-4" />
-          <label class="switch-button" for="switch-4-4">Toggle</label>
-        </div>
-      </div>  
-    </div> -->
-
-
     <!-- Área de resultado -->
-    <section class="panel-body col-md-12 fs-display-flex fs-flex-direction-column">
+    <section class="panel-body fs-display-flex fs-flex-direction-column">
       <div id="target"></div>
     </section>
 
