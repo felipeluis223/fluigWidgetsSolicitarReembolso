@@ -118,26 +118,26 @@
         <div id="collapseOneExemple" class="collapse-content" style="padding: 10px; border-top: 1px solid #ccc; display: none;">
           <div class="row">
             <div class="col-md-2">
-              
+
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Código</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-1" />
+                      <label class="switch-button" for="switch-1">Toggle</label>
                     </div>
                   </div>
                 </li>
               </ul>
-              
+
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Nome reduzido</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-2" />
+                      <label class="switch-button" for="switch-2">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -148,8 +148,8 @@
                   <div class="col-md-9" style="font-size: 12px;">Bairro</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-3" />
+                      <label class="switch-button" for="switch-3">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -160,8 +160,8 @@
                   <div class="col-md-9" style="font-size: 12px;">Endereço</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-4" />
+                      <label class="switch-button" for="switch-4">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -169,11 +169,11 @@
 
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
-                  <div class="col-md-9" style="font-size: 12px;">	E-mail</div>
+                  <div class="col-md-9" style="font-size: 12px;">E-mail</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-5" />
+                      <label class="switch-button" for="switch-5">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -184,8 +184,8 @@
                   <div class="col-md-9" style="font-size: 12px;">Loja</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-6" />
+                      <label class="switch-button" for="switch-6">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -196,8 +196,8 @@
                   <div class="col-md-9" style="font-size: 12px;">Nome</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-7" />
+                      <label class="switch-button" for="switch-7">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -205,11 +205,11 @@
 
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
-                  <div class="col-md-9" style="font-size: 12px;">CNPJ/CPF	</div>
+                  <div class="col-md-9" style="font-size: 12px;">CNPJ/CPF</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-8" />
+                      <label class="switch-button" for="switch-8">Toggle</label>
                     </div>
                   </div>
                 </li>
@@ -217,23 +217,23 @@
 
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
-                  <div class="col-md-9" style="font-size: 12px;">Insc.Estadual	</div>
+                  <div class="col-md-9" style="font-size: 12px;">Insc.Estadual</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-9" />
+                      <label class="switch-button" for="switch-9">Toggle</label>
                     </div>
                   </div>
                 </li>
               </ul>
-              
+
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Município</div>
                   <div class="col-md-3">
                     <div class="switch switch-success switch-sm">
-                      <input class="switch-input" type="checkbox" id="switch-4-4" />
-                      <label class="switch-button" for="switch-4-4">Toggle</label>
+                      <input class="switch-input" type="checkbox" id="switch-10" />
+                      <label class="switch-button" for="switch-10">Toggle</label>
                     </div>
                   </div>
                 </li>
