@@ -61,12 +61,33 @@ function exportPDF() {
                     tr {
                         page-break-inside: avoid;
                     }
+                    header {
+                        background-color: white;
+                        padding: 10px;
+                        border-bottom: 1px solid #ccc;
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        margin-bottom: 15px;
+                    }
+                    header .header-right h3 {
+                        margin: 0;
+                    }
+                    header .header-right span {
+                        font-size: 12px;
+                    }
                 </style>
             </head>
             <body>
-                <div style="display: flex; align-items: center; justify-content: flex-start; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
-                    <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
-                </div>
+                <header>
+                    <div class="header-left">
+                        <img src="https://fluighlg.teakrc.com:7070/portal/api/servlet/image/01/custom/logo_image.png" alt="Logo da Empresa" height="50">
+                    </div>
+                    <div class="header-right">
+                        <h3>Consulta de Clientes</h3>
+                        <span>Dataset que reúne dados básicos e de contato dos clientes cadastrados, utilizado para consultas e processos de negócio que envolvem informações cadastrais.</span>
+                    </div>
+                </header>
                 ${tableHtml}
             </body>
         </html>
