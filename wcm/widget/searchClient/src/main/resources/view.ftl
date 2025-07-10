@@ -97,7 +97,7 @@
             <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
           </div>
         </div>
-        <div class="col-md-8 fs-display-flex fs-align-items-center fs-md-gap">
+        <div class="col-md-8 fs-display-flex fs-md-gap fs-lg-margin-top">
           <button type="button" class="btn btn-default">Limpar</button>
           <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
           <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
