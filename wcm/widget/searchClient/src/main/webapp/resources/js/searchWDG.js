@@ -13,16 +13,16 @@ var Search = SuperWidget.extend({
                 that.executeReport();
             });
 
+            // Funções de exportar os dados:
             $("#btnExportPDF").click(function () {
                 exportPDF();
             });
-            
             $("#btnExportCSV").click(function () {
                 exportCSV();
             });
-            // $("#btnPrint").click(function () {
-            //     exportPDF();
-            // });
+            $("#btnExportXLSX").click(function () {
+                exportXLSX();
+            });
 
             // Sempre que um toggle for alterado, renderiza a tabela com as colunas selecionadas
             $(".toggle-column").on("change", function () {

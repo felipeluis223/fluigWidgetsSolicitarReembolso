@@ -1,5 +1,4 @@
 function exportCSV(filename = 'clientes.csv') {
-    console.log('clickou...')
     const table = $('#tableClientes').DataTable();
     const visibleColumns = table.columns(':visible')[0];
 

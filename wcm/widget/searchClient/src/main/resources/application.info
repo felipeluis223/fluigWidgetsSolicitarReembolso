@@ -22,4 +22,5 @@ application.resource.js.4=/resources/js/searchWDG.js
 application.resource.js.5=/resources/js/renderTable.js
 application.resource.js.6=/resources/js/lib/exportPDF.js
 application.resource.js.7=/resources/js/lib/exportCSV.js
+application.resource.js.8=/resources/js/lib/exportXLSX.js
 hash=4a16315e9e66fa7d797b3f6b1fb365b69f9a4ce2
