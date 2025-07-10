@@ -96,7 +96,7 @@
           <input type="text" class="form-control" id="inscrInput" placeholder="Ex.: 1234567890">
         </div>
       </div>
-      <div class="col-md-2 fs-display-flex fs-align-items-center">
+      <div class="col-md-3 fs-display-flex fs-align-items-center fs-md-gap">
         <button type="button" class="btn btn-default">Limpar</button>
         <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
         <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
@@ -109,16 +109,34 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="collapse-icon" href="#collapseOneExemple">
-                Configurações Avançadas
+                <strong>Configurações Avançadas</strong>
             </a>
           </h4>
-          <p class="collapse-text">Clique para exibir detalhes adicionais.</p>
         </div>
         <div id="collapseOneExemple" class="collapse-content" style="display:none; padding: 10px; border-top: 1px solid #ccc;">
-          <p>Este é o conteúdo do accordion. Pode conter tabelas, formulários, textos, etc.</p>
+          <ul class="list-group col-md-2 ">
+            <li class="list-group-item fs-bg-info">Cras justo odio</li>
+          </ul>
+
+          <!-- <div class="switch switch-success switch-sm">
+            <input class="switch-input" type="checkbox" id="switch-4-4" />
+            <label class="switch-button" for="switch-4-4">Toggle</label>
+          </div> -->
+
         </div>
       </div>
     </div>
+
+    <!-- <div class="col-md-2 fs-display-flex fs-align-items-center fs-direction-row ">
+      <div class="col-md-7 fs-bg-success">Nome reduzido</div>
+      <div class="col-md-2 fs-bg-warning">
+        <div class="switch switch-success switch-sm">
+          <input class="switch-input" type="checkbox" id="switch-4-4" />
+          <label class="switch-button" for="switch-4-4">Toggle</label>
+        </div>
+      </div>  
+    </div> -->
+
 
     <!-- Área de resultado -->
     <section class="panel-body col-md-12 fs-display-flex fs-flex-direction-column">
