@@ -99,7 +99,16 @@
         </div>
         <div class="col-md-8 fs-display-flex fs-md-gap fs-lg-margin-top">
           <button type="button" class="btn btn-default" id="btnLimpar">Limpar</button>
-          <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Exportar <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="btnExportPDF">Exportar PDF</a></li>
+              <li><a href="#" id="btnExportCSV">Exportar CSV</a></li>
+              <li><a href="#" id="btnExportXLSX">Exportar XLSX</a></li>
+            </ul>
+          </div>
           <button type="button" id="btnBuscarDados" class="btn btn-info">Filtrar</button>
         </div>
       </div>

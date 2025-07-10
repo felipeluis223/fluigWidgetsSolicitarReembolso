@@ -1,4 +1,4 @@
-function printTable() {
+function exportPDF() {
     var table = $('#tableClientes').DataTable();
 
     // Força todas as colunas visíveis temporariamente para impressão
