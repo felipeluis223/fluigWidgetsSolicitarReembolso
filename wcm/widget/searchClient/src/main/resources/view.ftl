@@ -154,7 +154,10 @@
                   </div>
                 </li>
               </ul>
+            </div>
 
+            <!-- 2º Coluna de Toggles -->
+            <div class="col-md-2">
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">Bairro</div>
@@ -178,7 +181,10 @@
                   </div>
                 </li>
               </ul>
+            </div>
 
+            <!-- 3º Coluna de Toggles -->
+            <div class="col-md-2">
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">E-mail</div>
@@ -190,9 +196,21 @@
                   </div>
                 </li>
               </ul>
+              
+              <ul class="list-group">
+                <li class="list-group-item col-md-12 fs-xs-padding">
+                  <div class="col-md-9" style="font-size: 12px;">Município</div>
+                  <div class="col-md-3">
+                    <div class="switch switch-success switch-sm">
+                      <input class="switch-input toggle-column" type="checkbox" id="switch-10" data-column="A1_MUN" checked />
+                      <label class="switch-button" for="switch-10">Toggle</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <!-- 2º Coluna de Toggles -->
+            <!-- 4º Coluna de Toggles -->
             <div class="col-md-2">
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
@@ -217,7 +235,10 @@
                   </div>
                 </li>
               </ul>
+            </div>
 
+            <!-- 5º Coluna de Toggles -->
+            <div class="col-md-2">
               <ul class="list-group">
                 <li class="list-group-item col-md-12 fs-xs-padding">
                   <div class="col-md-9" style="font-size: 12px;">CNPJ/CPF</div>
@@ -237,18 +258,6 @@
                     <div class="switch switch-success switch-sm">
                       <input class="switch-input toggle-column" type="checkbox" id="switch-9" data-column="A1_INSCR" checked />
                       <label class="switch-button" for="switch-9">Toggle</label>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-              <ul class="list-group">
-                <li class="list-group-item col-md-12 fs-xs-padding">
-                  <div class="col-md-9" style="font-size: 12px;">Município</div>
-                  <div class="col-md-3">
-                    <div class="switch switch-success switch-sm">
-                      <input class="switch-input toggle-column" type="checkbox" id="switch-10" data-column="A1_MUN" checked />
-                      <label class="switch-button" for="switch-10">Toggle</label>
                     </div>
                   </div>
                 </li>
