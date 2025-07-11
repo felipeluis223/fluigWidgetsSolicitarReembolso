@@ -24,7 +24,7 @@ var Search = SuperWidget.extend({
                 exportXLSX();
             });
 
-            // Sempre que um toggle for alterado, renderiza a tabela com as colunas selecionadas
+            // Atualiza tabela ao mudar colunas visíveis
             $(".toggle-column").on("change", function () {
                 if (window.ultimoResultadoDados) {
                     renderTable(window.ultimoResultadoDados);
@@ -35,67 +35,39 @@ var Search = SuperWidget.extend({
 
     executeReport: function () {
         var cnpj = $("#cnpjInput").val().trim();
-        var nome = $("#nomeInput").val().trim();
-        var nomeReduzido = $("#nreduzInput").val().trim();
-
         var constraints = [];
-        var i = 0;
 
         if (cnpj) {
-            constraints.push(`constraintsField[${i}]=A1_CGC`);
-            constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent(cnpj)}`);
-            constraints.push(`constraintsType[${i}]=MUST`);
-            constraints.push(`constraintsLikeSearch[${i}]=false`);
-            i++;
+            // Envia apenas a constraint que o dataset usa na API
+            constraints.push(DatasetFactory.createConstraint("cCNPJ", cnpj, cnpj, ConstraintType.MUST));
         }
 
-        if (nomeReduzido) {
-            constraints.push(`constraintsField[${i}]=A1_NREDUZ`);
-            constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nomeReduzido + '%')}`);
-            constraints.push(`constraintsType[${i}]=MUST`);
-            constraints.push(`constraintsLikeSearch[${i}]=true`);
-            i++;
-        }
+        console.log("CONSTRAINTS:", constraints);
 
-        if (nome) {
-            constraints.push(`constraintsField[${i}]=A1_NOME`);
-            constraints.push(`constraintsInitialValue[${i}]=${encodeURIComponent('%' + nome + '%')}`);
-            constraints.push(`constraintsType[${i}]=MUST`);
-            constraints.push(`constraintsLikeSearch[${i}]=true`);
-            i++;
-        }
+        var datasetReturned = DatasetFactory.getDataset(
+            "dsGetClienteFiltro",
+            null,
+            constraints,
+            null
+        );
+        console.log('RETORNO: ');
+        console.log(datasetReturned);
 
-        var query = `datasetId=dsGetClienteFiltro&${constraints.join("&")}&limit=300`;
-        var url = `/api/public/ecm/dataset/search?${query}`;
-
-        FluigUtils.restCall({
-            method: 'GET',
-            url: url
-        }, function (result) {
-            if (result && result.status === 200) {
-                var records = result.response.content || result.response || [];
-                var mydata = [];
-
-                for (var index in records) {
-                    var record = records[index];
-                    var recordObject = {};
-
-                    for (var columnName in record) {
-                        if (record.hasOwnProperty(columnName)) {
-                            recordObject[columnName] = record[columnName] || "";
-                        }
+        if (datasetReturned && datasetReturned.values) {
+            var mydata = datasetReturned.values.map(function (record) {
+                var obj = {};
+                for (var key in record) {
+                    if (record.hasOwnProperty(key)) {
+                        obj[key] = record[key] || "";
                     }
-
-                    mydata.push(recordObject);
                 }
+                return obj;
+            });
 
-                window.ultimoResultadoDados = mydata; // salva para reaproveitar no toggle
-
-                renderTable(mydata);
-
-            } else {
-                console.error('Erro ao buscar dataset:', result.statusText);
-            }
-        });
+            window.ultimoResultadoDados = mydata;
+            renderTable(mydata);
+        } else {
+            console.error("Nenhum dado retornado do Dataset.");
+        }
     }
 });

@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
 
 <!-- Cabeçalho Fluig -->
 <header id="printHeader" style="display:none; background-color: white; padding: 10px; border-bottom: 1px solid #ccc;">
@@ -89,7 +90,7 @@
         <div class="col-md-2">
           <div class="form-group">
             <label for="cnpjInput">CNPJ/CPF:</label>
-            <input type="text" class="form-control" id="cnpjInput" placeholder="Ex.: 00.000.000/0000-00">
+            <input type="text" class="form-control" id="cnpjInput" name="cnpjInput" placeholder="Ex.: 00.000.000/0000-00">
           </div>
         </div>
         <div class="col-md-2">
