@@ -13,6 +13,8 @@ var Search = SuperWidget.extend({
                 that.executeReport();
             });
 
+            $("#btnLimpar").click(function(){});
+
             // Funções de exportar os dados:
             $("#btnExportPDF").click(function () {
                 exportPDF();
