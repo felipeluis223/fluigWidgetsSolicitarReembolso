@@ -37,7 +37,7 @@ function exportPDF() {
                     body {
                         font-family: Arial, sans-serif;
                         font-size: 10px;
-                        margin: 20mm 10mm 20mm 10mm; /* margem topo-direita-baixo-esquerda */
+                        margin: 0; /* margem topo-direita-baixo-esquerda */
                         padding: 0;
                     }
                     table {
@@ -54,7 +54,7 @@ function exportPDF() {
                         vertical-align: top;
                         overflow-wrap: break-word;
                         word-break: break-word;
-                        max-width: 150px;       /* largura máxima */
+                        max-width: 100px;       /* largura máxima */
                         min-width: 50px;       /* largura mínima */
                         width: 50px;           /* largura fixa */
                     }
