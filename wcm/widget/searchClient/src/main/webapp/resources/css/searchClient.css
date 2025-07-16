@@ -87,43 +87,43 @@
   /* Limite de largura e quebra para cada coluna específica */
   #tableClientes th:nth-child(1),  /* ex: Filial */
   #tableClientes td:nth-child(1) {
-    max-width: 40px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(2),  /* Código */
   #tableClientes td:nth-child(2) {
-    max-width: 50px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(3),  /* Loja */
   #tableClientes td:nth-child(3) {
-    max-width: 30px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(4),  /* Nome */
   #tableClientes td:nth-child(4) {
-    max-width: 120px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(5),  /* Endereço */
   #tableClientes td:nth-child(5) {
-    width: 100px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(6),  /* Bairro */
   #tableClientes td:nth-child(6) {
-    max-width: 50px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(7),  /* Município */
   #tableClientes td:nth-child(7) {
-    max-width: 50px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(8),  /* E-mail */
   #tableClientes td:nth-child(8) {
-    max-width: 90px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(9),  /* CNPJ/CPF */
   #tableClientes td:nth-child(9) {
-    max-width: 70px !important;
+    width: 20px !important;
   }
   #tableClientes th:nth-child(10), /* Inscrição Estadual */
   #tableClientes td:nth-child(10) {
-    max-width: 60px !important;
+    width: 20px !important;
   }
 
   /* Rodapé com número da página */

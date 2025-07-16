@@ -1,4 +1,5 @@
 function exportPDF() {
+    console.log('Clickou no PDF')
     var table = $('#tableClientes').DataTable();
 
     // Força todas as colunas visíveis temporariamente para impressão
@@ -11,7 +12,6 @@ function exportPDF() {
     var rowsHtml = '';
     dataRows.each(function(rowData) {
         rowsHtml += '<tr>';
-        // Supondo que rowData seja um array (ou objeto, adapte conforme seu dataset)
         for (var i = 0; i < rowData.length; i++) {
             rowsHtml += '<td>' + rowData[i] + '</td>';
         }
@@ -22,7 +22,7 @@ function exportPDF() {
     var headerHtml = $('#tableClientes thead').prop('outerHTML');
 
     // Monta tabela completa para impressão
-    var tableHtml = '<table id="tableClientes" style="width:100%; border-collapse: collapse;" border="1">' +
+    var tableHtml = '<table id="tableClientes" style="width:100%; border-collapse: collapse; table-layout: fixed;" border="1">' +
         headerHtml +
         '<tbody>' + rowsHtml + '</tbody>' +
         '</table>';
@@ -37,13 +37,14 @@ function exportPDF() {
                     body {
                         font-family: Arial, sans-serif;
                         font-size: 10px;
-                        margin: 20mm;
+                        margin: 20mm 10mm 20mm 10mm; /* margem topo-direita-baixo-esquerda */
+                        padding: 0;
                     }
                     table {
                         font-size: 9px;
                         width: 100%;
                         border-collapse: collapse;
-                        table-layout: fixed;
+                        table-layout: fixed; /* importante para largura fixa */
                         word-wrap: break-word;
                     }
                     th, td {
@@ -53,6 +54,9 @@ function exportPDF() {
                         vertical-align: top;
                         overflow-wrap: break-word;
                         word-break: break-word;
+                        max-width: 150px;       /* largura máxima */
+                        min-width: 50px;       /* largura mínima */
+                        width: 50px;           /* largura fixa */
                     }
                     th {
                         background-color: #f4f4f4;
